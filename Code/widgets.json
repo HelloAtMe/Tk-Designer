@@ -1,0 +1,109 @@
+{
+    "widgets":{       
+        "Label":{
+            "style":        "\t\tself.style.configure('{widget_name}.TLabel', relief='{relief}', font=('{family}',{size},'{weight}'), background='{bg}', foreground='{fg}', anchor='{font_anchor}')",
+            "variable":     "\t\tself.{widget_name}Var = StringVar(value='{widget_label}')",
+            "define":       "\t\tself.{widget_name} = Label(self.{master}, textvariable=self.{widget_name}Var, style='{widget_name}.TLabel')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')",
+            "bind":         "\t\tself.{widget_name}.bind('<{bind_key}>', self.{bind_func})"
+        },
+        "Entry":{
+            "style":        "\t\tself.style.configure('{widget_name}.TEntry', relief='{relief}', font=('{family}',{size},'{weight}'), foreground='{fg}', anchor='{font_anchor}')",
+            "variable":     "\t\tself.{widget_name}Var = StringVar(value='')",
+            "define0":      "\t\tself.{widget_name} = Entry(self.{master}, textvariable=self.{widget_name}Var, style='{widget_name}.TEntry')",
+            "define1":      "\t\tself.{widget_name} = Entry(self.{master}, textvariable=self.{widget_name}Var, show='{show}', style='{widget_name}.TEntry')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')",
+            "bind":         "\t\tself.{widget_name}.bind('<{bind_key}>', self.{bind_func})"
+        },
+        "Button":{
+            "style":        "\t\tself.style.configure('{widget_name}.TButton', relief='{relief}', font=('{family}',{size},'{weight}'), foreground='{fg}', anchor='{font_anchor}')",
+            "variable":     "\t\tself.{widget_name}Var = StringVar(value='{widget_label}')",
+            "define":       "\t\tself.{widget_name} = Button(self.{master}, textvariable=self.{widget_name}Var, command=self.{cmd_func}, style='{widget_name}.TButton')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')"
+        },
+        "Radiobutton":{
+            "style":        "\t\tself.style.configure('{widget_name}.TRadiobutton', relief='{relief}', font=('{family}',{size},'{weight}'), foreground='{fg}', anchor='{font_anchor}')",
+            "variable":     "\t\tself.{widget_name}Var = StringVar(value='{widget_label}')\n\t\tself.{widget_name}IntVar = IntVar()",
+            "define":       "\t\tself.{widget_name} = Radiobutton(self.{master}, textvariable=self.{widget_name}Var, value={value}, variable=self.{widget_name}IntVar, command=self.{cmd_func}, style='{widget_name}.TRadiobutton')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')"
+        },
+        "Checkbutton":{
+            "style":        "\t\tself.style.configure('{widget_name}.TCheckbutton', relief='{relief}', font=('{family}',{size},'{weight}'), foreground='{fg}', anchor='{font_anchor}')",
+            "variable":     "\t\tself.{widget_name}Var = StringVar(value='{widget_label}')\n\t\tself.{widget_name}IntVar = IntVar()",
+            "define":       "\t\tself.{widget_name} = Checkbutton(self.{master}, textvariable=self.{widget_name}Var, onvalue=1, offvalue=0, variable=self.{widget_name}IntVar, command=self.{cmd_func}, style='{widget_name}.TCheckbutton')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')"
+        },
+        "Labelframe":{
+            "style":        "\t\tself.style.configure('{widget_name}.TLabelframe', relief='{relief}', font=('{family}',{size},'{weight}'), background='{bg}', foreground='{fg}', anchor='{font_anchor}')",
+            "define":       "\t\tself.{widget_name} = Labelframe(self.{master}, text='{widget_label}', labelanchor='{lb_anchor}', style='{widget_name}.TLabelframe')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')"
+        },
+        "Notebook":{
+            "style":        "\t\tself.style.configure('{widget_name}.TNotebook', relief='{relief}', background='{bg}')",
+            "define":       "\t\tself.{widget_name} = Notebook(self.{master}, style='{widget_name}.TNotebook')\n\t\t# self.{widget_name}tab1 = Frame(self.{widget_name})\n\t\t# self.{widget_name}tab2 = Frame(self.{widget_name})\n\t\t# self.{widget_name}.add(self.{widget_name}tab1, text=\"tab1\")\n\t\t# self.{widget_name}.add(self.{widget_name}tab2, text=\"tab2\")",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')"
+        },
+        "Combobox":{
+            "style":        "\t\tself.style.configure('{widget_name}.TCombobox', relief='{relief}', font=('{family}',{size},'{weight}'), background='{bg}', foreground='{fg}', anchor='{font_anchor}')",
+            "variable":     "\t\tself.{widget_name}Var = StringVar()\n\t\tself.{widget_name}Values = ()",
+            "define":       "\t\tself.{widget_name} = Combobox(self.{master}, textvariable=self.{widget_name}Var, values=self.{widget_name}Values, style='{widget_name}.TCombobox')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')",
+            "bind":         "\t\tself.{widget_name}.bind('<{bind_key}>', self.{bind_func})"
+        },      
+        "Spinbox":{
+            "style":        "\t\tself.style.configure('{widget_name}.TSpinbox', relief='{relief}', font=('{family}',{size},'{weight}'), background='{bg}', foreground='{fg}', anchor='{font_anchor}')",
+            "define0":      "\t\tself.{widget_name} = Spinbox(self.{master}, from_={from}, to={to}, increment={increment}, style='{widget_name}.TSpinbox')",
+            "define1":      "\t\tself.{widget_name} = Spinbox(self.{master}, values={values}, style='{widget_name}.TSpinbox')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')",
+            "bind":         "\t\tself.{widget_name}.bind('<{bind_key}>', self.{bind_func})"
+        },
+        "Treeview":{
+            "style":        "\t\tself.style.configure('{widget_name}.Treeview', relief='{relief}', font=('{family}',{size},'{weight}'), background='{bg}', foreground='{fg}', anchor='{font_anchor}')",
+            "define0":      "\t\tcolumns = ()\n\t\tself.{widget_name} = Treeview(self.{master}, show='headings', columns=columns, selectmode={selectmode}, style='{widget_name}.Treeview')\n\t\t# self.{widget_name}.column('', width=50, anchor='center')\n\t\t# self.{widget_name}.heading('', text='')\n\t\t# self.{widget_name}.insert(\"\", i, values=()) # i for row index, values for column value",
+            "define1":      "\t\tself.{widget_name} = Treeview(self.{master}, show='tree', selectmode={selectmode}, style='{widget_name}.Treeview')\n\t\t# idx_ = self.{widget_name}.insert(\"\", 0, \"1\", text=\"00\", values=(\"1\"))\n\t\t# idx_1 = self.{widget_name}.insert(idx_, 0, \"2\", text=\"01\", values=(\"2\"))\n\t\t# idx_2 = self.{widget_name}.insert(idx_, 1, \"3\", text=\"02\", values=(\"3\"))",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')",
+            "bind":         "\t\tself.{widget_name}.bind('<{bind_key}>', self.{bind_func})"
+        },
+        "Progressbar":{
+            "style":        "\t\tself.style.configure('{widget_name}.TProgressbar', relief='{relief}')",
+            "define0":      "\t\tself.{widget_name} = Progressbar(self.{master}, orient='horizontal', mode='{mode}', maximum={maximum}, value=0, style='{widget_name}.TProgressbar')",
+            "define1":      "\t\tself.{widget_name} = Progressbar(self.{master}, orient='vertical', mode='{mode}', maximum={maximum}, value=0, style='{widget_name}.TProgressbar')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')"
+        },
+        "Scrollbar":{
+            "define0":      "\t\tself.{widget_name} = Scrollbar(self.{master}, orient='horizontal')\n\t\t# self.{widget_name}[\"command\"]=self.t.xview)",
+            "define1":      "\t\tself.{widget_name} = Scrollbar(self.{master}, orient='vertical')\n\t\t# self.{widget_name}[\"command\"]=self.t.yview)",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')"
+        },
+        "Text":{
+            "define":       "\t\tself.{widget_name} = Text(self.{master}, bg='{bg}', fg='{fg}', font=('{family}',{size},'{weight}'))",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')"
+        },
+        "Listbox":{
+            "variable":     "\t\tself.{widget_name}Var = StringVar(value=())",
+            "define":       "\t\tself.{widget_name} = Listbox(self.{master}, bg='{bg}', fg='{fg}', font=('{family}',{size},'{weight}'), selectmode='{selectmode}', justify='center', listvariable=self.{widget_name}Var)\n\t\t# self.{widget_name}.insert(\"end\", i)",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')",
+            "bind":         "\t\tself.{widget_name}.bind('<{bind_key}>', self.{bind_func})"
+
+        },
+        "Canvas":{
+            "define":       "\t\tself.{widget_name} = Canvas(self.{master}, bg='{bg}', relief='{relief}')",
+            "place":        "\t\tself.{widget_name}.place(relx={relx}, rely={rely}, relwidth={relw}, relheight={relh}, anchor='nw')"
+        }
+    },
+
+    "tkhead":"from tkinter import *\nfrom tkinter.ttk import *\n# from tkinter import messagebox\n# from tkinter import colorchooser\n# from tkinter import filedialog",
+
+    "uiclass":{    
+        "class":"class ApplicationUI():\n\tdef __init__(self):\n\t\tself.createwidgets()",
+        "func":"\tdef createwidgets(self):\n\t\tself.top = Frame(self.master)\n\t\tself.top.place(relx=0, rely=0, relwidth=1, relheight=1, anchor='nw')\n\t\tself.style = Style()"
+        
+    },
+        
+    "cmdclass":{
+        "class":"class Application(ApplicationUI):\n\tdef __init__(self, master=None):\n\t\tself.master = master\n\t\tApplicationUI.__init__(self)",
+        "cmdfunc":"\n\tdef {funcname}(self):\n\t# TODO, write function here. #\n\t\tpass",
+        "bindfunc":"\n\tdef {funcname}(self, event):\n\t# TODO, write function here. #\n\t\tpass"    
+        
+    }
+}

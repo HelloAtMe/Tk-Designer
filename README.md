@@ -7,3 +7,4 @@
 
 # 捐赠
   该代码以源码的形式公开，该代码的使用权免费供大家使用，大家使用的顺手的话可以对我进行捐赠。
+https://github.com/HelloAtMe/Tk-Designer/blob/master/pic/aa.png
